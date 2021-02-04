@@ -99,7 +99,7 @@ class PriceEntry {
 
   ///From json method
   factory PriceEntry.fromJson(Map<String, dynamic> json) => PriceEntry(
-        day: json["d"],
+        day: json["d"] == null ? null : json["d"],
         close: json["c"] == null ? null : json["c"].toDouble(),
         open: json["o"] == null ? null : json["o"].toDouble(),
         high: json["h"] == null ? null : json["h"].toDouble(),
@@ -109,11 +109,11 @@ class PriceEntry {
 
   ///To json method
   Map<String, dynamic> toJson() => {
-        "d": day,
-        "c": close,
+        "d": day == null ? null : day,
+        "c": close == null ? null : close,
         "o": open == null ? null : open,
-        "h": high,
-        "l": low,
+        "h": high == null ? null : high,
+        "l": low == null ? null : low,
         "v": volume == null ? null : volume,
       };
 }
