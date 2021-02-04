@@ -1,10 +1,7 @@
-import 'package:after_init/after_init.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:trading_app_demo/ui/widgets/infobar_widget.dart';
 
-import '../../core/providers/data_provider.dart';
 import '../widgets/appbar_widget.dart';
+import '../widgets/infobar_widget.dart';
 
 ///Main page
 class HomePage extends StatefulWidget {
@@ -12,13 +9,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with AfterInitMixin<HomePage> {
-  @override
-  void didInitState() {
-    var dataProvider = Provider.of<DataProvider>(context);
-    dataProvider.getDataModelFromEndPoint();
-    Future.delayed(Duration(seconds: 3));
-  }
+class _HomePageState extends State<HomePage>  {
+
 
   @override
   Widget build(BuildContext context) {
