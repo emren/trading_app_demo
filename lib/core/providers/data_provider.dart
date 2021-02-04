@@ -45,4 +45,40 @@ class DataProvider extends ChangeNotifier {
     var percentage = double.parse(prc.toString()).toStringAsFixed(2);
     return percentage;
   }
+
+  ///Method to get one day list of price entry objects
+  List<PriceEntry> getOneDayPriceEntryList() {
+    var list = dataModel.the1G;
+    return list;
+  }
+
+  ///Method to get one week list of price entry objects
+  List<PriceEntry> getOneWeekPriceEntryList() {
+    var list = dataModel.the1H;
+    return list;
+  }
+
+  ///Method to get one month list of price entry objects
+  List<PriceEntry> getOneMonthPriceEntryList() {
+    var list = dataModel.the1A;
+    return list;
+  }
+
+  ///Method to get one year list of price entry objects
+  List<PriceEntry> getOneYearPriceEntryList() {
+    var list = dataModel.the1Y;
+    return list;
+  }
+
+  ///Method to get three month list of price entry objects
+  List<PriceEntry> getThreeMonthPriceEntryList() {
+    var list = dataModel.the3A;
+    return list;
+  }
+
+  ///Method to get five year list of price entry objects
+  List<PriceEntry> getFiveYearPriceEntryList() {
+    var list = dataModel.the5Y;
+    return list;
+  }
 }

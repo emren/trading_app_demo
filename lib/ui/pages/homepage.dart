@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trading_app_demo/ui/widgets/graph_widget.dart';
 
 import '../widgets/appbar_widget.dart';
 import '../widgets/infobar_widget.dart';
@@ -28,6 +29,10 @@ class _HomePageState extends State<HomePage>  {
                 height: 50,
               ),
               InfoBarWidget(),
+              SizedBox(
+                height: 50,
+              ),
+              GraphWidget(),
             ],
           ),
         ),
