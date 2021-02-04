@@ -25,4 +25,12 @@ class DataProvider extends ChangeNotifier {
     setdataModel(dataModel);
     print(dataModel.symbol);
   }
+
+  String getDataModelSymbol(){
+    return dataModel.symbol;
+  }
+
+  String getLastClosePrice(){
+    return dataModel.the1G.last.close.toString();
+  }
 }
