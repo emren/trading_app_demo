@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/providers/data_provider.dart';
 
-///Widget for the app bar
+///Widget for the info bar
 class InfoBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

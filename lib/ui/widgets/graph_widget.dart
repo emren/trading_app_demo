@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../core/providers/data_provider.dart';
 
+///Widget for the graph tool
 class GraphWidget extends StatefulWidget {
   @override
   _GraphWidgetState createState() => _GraphWidgetState();
 }
 
 class _GraphWidgetState extends State<GraphWidget> {
-
   @override
   Widget build(BuildContext context) {
     var dataProvider = Provider.of<DataProvider>(context);
