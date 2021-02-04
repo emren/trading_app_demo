@@ -64,3 +64,26 @@ pubspec.yaml
 	-  analyzer [https://pub.dev/packages/analyzer](https://pub.dev/packages/analyzer) (BSD)
 
 
+## 3. Applied Software Patterns
+
+To allow extensibility, modularization and separation of concerns the following patterns have been applied:
+
+- **Providers<br />**
+Trading app demo has state management via the Provider package. Provider is the recommended state management solution by the Flutter team.
+[https://flutter.dev/docs/development/data-and-backend/state-mgmt/options](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options) .
+Before provider, google's flutter team was recommending BLoC, but as of today, recommendation is Provider.
+The state is held at Provider classes which extends Flutters own ChangeNotifier class. The Providers are on top of the widget tree and wrapped around the MaterialApp which is the initial widget of the Flutter framework. This structure allows state to be accessible from anywhere of the widget tree and rebuild widgets on notifyListeners() calls. This wrapping is via a MultiProvider and can be found at
+
+
+
+```
+main.dart
+```
+
+
+
+
+- **MVC Layering<br />**
+By separating UI and Logic folders and files, we establish a reusable logic section which in further implementations we can use it as is and revise the UI accordingly. MVC stands for Model, View and Control. Our Model and Control files are under **/core**. Our View files are under **/ui**.
+
+
