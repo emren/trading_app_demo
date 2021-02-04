@@ -26,11 +26,23 @@ class DataProvider extends ChangeNotifier {
     print(dataModel.symbol);
   }
 
-  String getDataModelSymbol(){
+  ///Getter method for the symbol of the datamodel
+  String getDataModelSymbol() {
     return dataModel.symbol;
   }
 
-  String getLastClosePrice(){
+  ///Getter method for the last close price of the stock
+  String getLastClosePrice() {
     return dataModel.the1G.last.close.toString();
+  }
+
+  ///Calculator for percentage rise/fall of stock
+  String getPercentage() {
+    var lst = dataModel.the1G.length;
+    double lastClose = dataModel.the1G[lst - 2].close;
+    double previousClose = dataModel.the1G[lst - 3].close;
+    var prc = (lastClose - previousClose) / previousClose * 100;
+    var percentage = double.parse(prc.toString()).toStringAsFixed(2);
+    return percentage;
   }
 }

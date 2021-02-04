@@ -8,32 +8,15 @@ class InfoBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var dataProvider = Provider.of<DataProvider>(context);
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(left:10.0),
+          padding: EdgeInsets.only(left: 10.0),
           child: Text(
             dataProvider.getDataModelSymbol(),
             style: TextStyle(
               color: Colors.green[900],
-              fontSize: 30,
-              fontWeight: FontWeight.w500,
-              fontStyle: FontStyle.normal,
-              letterSpacing: 0,
-            ),
-          ),
-        ),
-        Text('₺',
-            style: TextStyle(
-              fontFamily: 'Roboto',
-            )),
-        Padding(
-          padding: EdgeInsets.only(left:10.0),
-          child: Text(
-            dataProvider.getLastClosePrice() ,
-            style: TextStyle(
-              color: Colors.green[900],
-              fontSize: 30,
+              fontSize: 40,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.normal,
               letterSpacing: 0,
@@ -41,13 +24,61 @@ class InfoBarWidget extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 10.0),
-          child: Icon(
-            Icons.add,
-            color: Colors.green,
-            size: 30.0,
+          padding: EdgeInsets.only(left: 10.0),
+          child: Row(
+            children: [
+              Text(
+                dataProvider.getLastClosePrice(),
+                style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.normal,
+                  letterSpacing: 0,
+                ),
+              ),
+              Text(
+                ' ₺',
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 30,
+                  color: Colors.green,
+                ),
+              ),
+            ],
           ),
         ),
+        Padding(
+          padding: EdgeInsets.only(left: 10.0),
+          child: Row(
+            children: [
+              Icon(
+                Icons.arrow_upward,
+                color: Colors.green,
+                size: 30.0,
+              ),
+              Text(
+                dataProvider.getPercentage(),
+                style: TextStyle(
+                  color: Colors.green,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.normal,
+                  letterSpacing: 0,
+                ),
+              ),
+              Text(
+                ' %',
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 20,
+                  color: Colors.green,
+                ),
+              ),
+            ],
+          ),
+        ),
+
       ],
     );
   }
