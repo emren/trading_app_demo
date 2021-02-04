@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import '../models/data_model.dart';
@@ -19,9 +21,7 @@ class DataProvider extends ChangeNotifier {
   void getDataModelFromEndPoint() async {
     var service = DataService();
     var response = await service.getData();
-    final jsonData = response.data;
-    print(jsonData);
-    var dataModel = DataModel.fromJson(jsonData);
+    var dataModel = DataModel.fromJson(json.decode(response.data));
     setdataModel(dataModel);
     print(dataModel.symbol);
   }
