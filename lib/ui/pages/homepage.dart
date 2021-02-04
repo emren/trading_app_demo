@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trading_app_demo/ui/widgets/graph_widget.dart';
 
 import '../widgets/appbar_widget.dart';
+import '../widgets/graph_widget.dart';
 import '../widgets/infobar_widget.dart';
 
 ///Main page
@@ -10,9 +10,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>  {
-
-
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

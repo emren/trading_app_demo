@@ -78,7 +78,6 @@ class InfoBarWidget extends StatelessWidget {
             ],
           ),
         ),
-
       ],
     );
   }

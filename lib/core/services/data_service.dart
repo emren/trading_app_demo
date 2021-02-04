@@ -26,7 +26,7 @@ class DataService {
     ));
     dio.transformer = FlutterTransformer();
     var response = await dio.get(url);
-    //log(response.data.toString());
+    log(response.data.toString());
     return response;
   }
 }

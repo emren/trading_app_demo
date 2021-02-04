@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../models/data_model.dart';
@@ -47,9 +48,14 @@ class DataProvider extends ChangeNotifier {
   }
 
   ///Method to get one day list of price entry objects
-  List<PriceEntry> getOneDayPriceEntryList() {
+  LineChartBarData getOneDayPriceEntryList() {
     var list = dataModel.the1G;
-    return list;
+    List<FlSpot> spots;
+    for (var i = 0; i < list.length; i++) {
+      spots.add(FlSpot(list[i].day, list[i].close));
+    }
+    LineChartBarData lst = LineChartBarData(spots: spots);
+    return lst;
   }
 
   ///Method to get one week list of price entry objects

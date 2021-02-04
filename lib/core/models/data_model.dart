@@ -100,10 +100,10 @@ class PriceEntry {
   ///From json method
   factory PriceEntry.fromJson(Map<String, dynamic> json) => PriceEntry(
         day: json["d"],
-        close: json["c"].toDouble(),
+        close: json["c"] == null ? null : json["c"].toDouble(),
         open: json["o"] == null ? null : json["o"].toDouble(),
-        high: json["h"].toDouble(),
-        low: json["l"].toDouble(),
+        high: json["h"] == null ? null : json["h"].toDouble(),
+        low: json["l"] == null ? null : json["l"].toDouble(),
         volume: json["v"] == null ? null : json["v"],
       );
 

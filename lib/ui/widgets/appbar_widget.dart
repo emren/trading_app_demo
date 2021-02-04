@@ -19,7 +19,7 @@ class AppBarWidget extends StatelessWidget {
           ),
         ),
         Text(
-          dataProvider.dataModel.symbol,
+          dataProvider.getDataModelSymbol(),
           style: TextStyle(
             color: Colors.green[900],
             fontSize: 30,
