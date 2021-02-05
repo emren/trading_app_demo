@@ -75,7 +75,7 @@ void main() {
       expect(value, 'ISCTR');
     });
 
-    test('getLastClosePrice - Data model symbol should get', () {
+    test('getLastClosePrice - Last close price should get', () {
       var app = DataProvider();
       app.setdataModel(DataModel(the1G: <PriceEntry>[
         PriceEntry(close: 5),
