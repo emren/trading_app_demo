@@ -58,7 +58,7 @@ class InfoBarWidget extends StatelessWidget {
                 size: 30.0,
               ),
               Text(
-                dataProvider.getPercentage(),
+                dataProvider.getPercentage(dataProvider.timeFrameMenuSelection),
                 style: TextStyle(
                   color: Colors.green,
                   fontSize: 20,

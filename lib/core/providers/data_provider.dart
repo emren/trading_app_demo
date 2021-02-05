@@ -38,11 +38,45 @@ class DataProvider extends ChangeNotifier {
     return dataModel.the1G.last.close.toString();
   }
 
-  ///Calculator for percentage rise/fall of stock
-  String getPercentage() {
-    var lst = dataModel.the1G.length;
-    double lastClose = dataModel.the1G[lst - 2].close;
-    double previousClose = dataModel.the1G[lst - 3].close;
+  ///Calculator for percentage rise/fall of stock depending on selection
+  String getPercentage(int selection) {
+    var list;
+    switch (selection) {
+      case 0:
+        {
+          list = dataModel.the1G;
+        }
+        break;
+      case 1:
+        {
+          list = dataModel.the1H;
+        }
+        break;
+      case 2:
+        {
+          list = dataModel.the1A;
+        }
+        break;
+      case 3:
+        {
+          list = dataModel.the3A;
+        }
+        break;
+      case 4:
+        {
+          list = dataModel.the1Y;
+        }
+        break;
+      case 5:
+        {
+          list = dataModel.the5Y;
+        }
+        break;
+    }
+
+    var lst = list.length;
+    double lastClose = list[lst - 1].close;
+    double previousClose = list[lst - 2].close;
     var prc = (lastClose - previousClose) / previousClose * 100;
     var percentage = double.parse(prc.toString()).toStringAsFixed(2);
     return percentage;
@@ -87,5 +121,6 @@ class DataProvider extends ChangeNotifier {
   ///Setter for timeframe menu selection
   void setTimeFrameMenuSelection(int itemId) {
     _timeFrameMenuSelection = itemId;
+    notifyListeners();
   }
 }
