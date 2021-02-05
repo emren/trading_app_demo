@@ -49,12 +49,23 @@ class DataProvider extends ChangeNotifier {
 
   ///Method to get one day list of price entry objects
   LineChartBarData getOneDayPriceEntryList() {
-    var list = dataModel.the1G;
-    List<FlSpot> spots;
+    //var list = dataModel.the1G;
+    var list = dataModel.the1H;
+    List<FlSpot> spots = [];
     for (var i = 0; i < list.length; i++) {
-      spots.add(FlSpot(list[i].day, list[i].close));
+      print(list.length);
+      print(i);
+      print(list[i].close);
+      spots.add(FlSpot(i.toDouble(), list[i].close));
     }
-    LineChartBarData lst = LineChartBarData(spots: spots);
+    LineChartBarData lst = LineChartBarData(
+      spots: spots,
+      colors: [Colors.green],
+      isCurved: true,
+      dotData: FlDotData(
+        show: false,
+      ),
+    );
     return lst;
   }
 

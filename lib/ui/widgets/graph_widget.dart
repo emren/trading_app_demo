@@ -17,9 +17,15 @@ class _GraphWidgetState extends State<GraphWidget> {
     return Container(
       height: 400,
       width: 400,
-      color: Colors.red,
+      color: Colors.white30,
       child: LineChart(
         LineChartData(
+          minX: 0,
+          maxX: 100,
+          minY: 5,
+          maxY: 8,
+          borderData: FlBorderData(show: false),
+          gridData: FlGridData(show: false),
           lineBarsData: [data],
         ),
       ),
