@@ -106,4 +106,4 @@ Regarding testing Google's [test](https://pub.dev/packages/test) package is used
 
 ## 6. Video of the application
 
-![](documents/tradeappdemo.mov)
+![](https://j.gifs.com/q7OBkD.gif)
