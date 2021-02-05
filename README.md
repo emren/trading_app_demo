@@ -57,6 +57,8 @@ pubspec.yaml
 - UI libraries
 	-  fl chart [https://pub.dev/packages/fl_chart](https://pub.dev/packages/fl_chart) (BSD)
 
+- Testing
+	-  mockito [https://pub.dev/packages/mockito](https://pub.dev/packages/mockito) (Apache 2.0)
 
 - Developer dependencies for best practices
 	-  linter [https://pub.dev/packages/linter](https://pub.dev/packages/linter) (BSD)
