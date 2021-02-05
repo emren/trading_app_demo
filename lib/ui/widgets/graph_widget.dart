@@ -42,12 +42,12 @@ class _GraphWidgetState extends State<GraphWidget>
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomButton(0, '1D', dataProvider.dataModel.the1G),
-              CustomButton(1, '1W', dataProvider.dataModel.the1H),
-              CustomButton(2, '1M', dataProvider.dataModel.the1A),
-              CustomButton(3, '3M', dataProvider.dataModel.the3A),
-              CustomButton(4, '1Y', dataProvider.dataModel.the1Y),
-              CustomButton(5, '5Y', dataProvider.dataModel.the5Y),
+              customButton(0, '1D', dataProvider.dataModel.the1G),
+              customButton(1, '1W', dataProvider.dataModel.the1H),
+              customButton(2, '1M', dataProvider.dataModel.the1A),
+              customButton(3, '3M', dataProvider.dataModel.the3A),
+              customButton(4, '1Y', dataProvider.dataModel.the1Y),
+              customButton(5, '5Y', dataProvider.dataModel.the5Y),
             ],
           ),
         ),
@@ -55,7 +55,7 @@ class _GraphWidgetState extends State<GraphWidget>
     );
   }
 
-  Widget CustomButton(int index, String text, var list) {
+  Widget customButton(int index, String text, var list) {
     var dataProvider = Provider.of<DataProvider>(context);
     return GestureDetector(
       onTap: () {

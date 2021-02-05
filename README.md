@@ -89,10 +89,17 @@ main.dart
 By separating UI and Logic folders and files, we establish a reusable logic section which in further implementations we can use it as is and revise the UI accordingly. MVC stands for Model, View and Control. Our Model and Control files are under **/core**. Our View files are under **/ui**.
 
 ## 4. Testing
-Regarding testing Google's [test](https://pub.dev/packages/test) package is used. Additionally, a mock library is needed to test the api calls, [mockito](https://pub.dev/packages/mockito) is used for this reason. There are unit tests to test the logic, and to test the services class to evaluate the end user experience. Testing classes are under 
+Regarding testing Google's [test](https://pub.dev/packages/test) package is used. Additionally, a mock library is needed to test the api calls, [mockito](https://pub.dev/packages/mockito) is used for this reason. There are unit tests to test the logic, and to test the services class to evaluate the end user experience. Testing classes are under
 
 ```
 /test
-```  
+```
 
-
+## 5. Steps taken when working on the project
+- GET requests made to receive a 200 status from endpoint and service class is created
+- The json file containing the data has been received is analyzed and modeled
+- Provider class to hold the state and the model has created
+- UI design of FinFree analyzed
+- UI design similar to FinFree is implemented
+- Unit tests have been written to test the logic and service
+- Read.me rewritten to provide the technical documentation
