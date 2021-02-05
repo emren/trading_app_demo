@@ -78,7 +78,14 @@ class DataProvider extends ChangeNotifier {
     return data;
   }
 
+  ///Timeframe menu selection
+  int _timeFrameMenuSelection = 0;
 
+  ///Getter for timeframe menu selection
+  int get timeFrameMenuSelection => _timeFrameMenuSelection;
 
-
+  ///Setter for timeframe menu selection
+  void setTimeFrameMenuSelection(int itemId) {
+    _timeFrameMenuSelection = itemId;
+  }
 }
