@@ -88,4 +88,11 @@ main.dart
 - **MVC Layering<br />**
 By separating UI and Logic folders and files, we establish a reusable logic section which in further implementations we can use it as is and revise the UI accordingly. MVC stands for Model, View and Control. Our Model and Control files are under **/core**. Our View files are under **/ui**.
 
+## 4. Testing
+Regarding testing Google's [test](https://pub.dev/packages/test) package is used. Additionally, a mock library is needed to test the api calls, [mockito](https://pub.dev/packages/mockito) is used for this reason. There are unit tests to test the logic, and to test the services class to evaluate the end user experience. Testing classes are under 
+
+```
+/test
+```  
+
 
