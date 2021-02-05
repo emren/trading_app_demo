@@ -7,6 +7,9 @@ class InfoBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dataProvider = Provider.of<DataProvider>(context);
+    var _isDown = double.parse(
+            dataProvider.getPercentage(dataProvider.timeFrameMenuSelection))
+        .isNegative;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -52,15 +55,21 @@ class InfoBarWidget extends StatelessWidget {
           padding: EdgeInsets.only(left: 10.0),
           child: Row(
             children: [
-              Icon(
-                Icons.arrow_upward,
-                color: Colors.green,
-                size: 30.0,
-              ),
+              _isDown
+                  ? Icon(
+                      Icons.arrow_downward,
+                      color: Colors.red,
+                      size: 30.0,
+                    )
+                  : Icon(
+                      Icons.arrow_upward,
+                      color: Colors.green,
+                      size: 30.0,
+                    ),
               Text(
                 dataProvider.getPercentage(dataProvider.timeFrameMenuSelection),
                 style: TextStyle(
-                  color: Colors.green,
+                  color: _isDown ? Colors.red : Colors.green,
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.normal,
@@ -72,7 +81,7 @@ class InfoBarWidget extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Roboto',
                   fontSize: 20,
-                  color: Colors.green,
+                  color: _isDown ? Colors.red : Colors.green,
                 ),
               ),
             ],
