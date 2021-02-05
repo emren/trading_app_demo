@@ -103,3 +103,7 @@ Regarding testing Google's [test](https://pub.dev/packages/test) package is used
 - UI design similar to FinFree is implemented
 - Unit tests have been written to test the logic and service
 - Read.me rewritten to provide the technical documentation
+
+## 6. Video of the application
+
+![](documents/tradeappdemo.mov)
