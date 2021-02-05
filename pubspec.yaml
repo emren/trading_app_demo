@@ -40,6 +40,7 @@ dev_dependencies:
   linter:
   analyzer:
   effective_dart:
+  mockito:
 
 
 # For information on the generic Dart part of this file, see the
