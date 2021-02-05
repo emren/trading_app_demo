@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -47,18 +48,16 @@ class DataProvider extends ChangeNotifier {
     return percentage;
   }
 
-  ///Method to get one day list of price entry objects
-  LineChartBarData getOneDayPriceEntryList() {
-    //var list = dataModel.the1G;
-    var list = dataModel.the1H;
-    List<FlSpot> spots = [];
-    for (var i = 0; i < list.length; i++) {
-      print(list.length);
-      print(i);
-      print(list[i].close);
+  ///Method to get list of price entry objects
+  LineChartData getPriceEntryList(List<PriceEntry> list) {
+    var length = list.length.toDouble();
+    var closings = <double>[];
+    var spots = <FlSpot>[];
+    for (var i = 0; i < length; i++) {
+      closings.add(list[i].close);
       spots.add(FlSpot(i.toDouble(), list[i].close));
     }
-    LineChartBarData lst = LineChartBarData(
+    var lst = LineChartBarData(
       spots: spots,
       colors: [Colors.green],
       isCurved: true,
@@ -66,36 +65,20 @@ class DataProvider extends ChangeNotifier {
         show: false,
       ),
     );
-    return lst;
+    var data = LineChartData(
+      minX: 0,
+      maxX: length + 10,
+      minY: closings.reduce(min),
+      maxY: closings.reduce(max),
+      borderData: FlBorderData(show: false),
+      gridData: FlGridData(show: false),
+      titlesData: FlTitlesData(show: false),
+      lineBarsData: [lst],
+    );
+    return data;
   }
 
-  ///Method to get one week list of price entry objects
-  List<PriceEntry> getOneWeekPriceEntryList() {
-    var list = dataModel.the1H;
-    return list;
-  }
 
-  ///Method to get one month list of price entry objects
-  List<PriceEntry> getOneMonthPriceEntryList() {
-    var list = dataModel.the1A;
-    return list;
-  }
 
-  ///Method to get one year list of price entry objects
-  List<PriceEntry> getOneYearPriceEntryList() {
-    var list = dataModel.the1Y;
-    return list;
-  }
 
-  ///Method to get three month list of price entry objects
-  List<PriceEntry> getThreeMonthPriceEntryList() {
-    var list = dataModel.the3A;
-    return list;
-  }
-
-  ///Method to get five year list of price entry objects
-  List<PriceEntry> getFiveYearPriceEntryList() {
-    var list = dataModel.the5Y;
-    return list;
-  }
 }
