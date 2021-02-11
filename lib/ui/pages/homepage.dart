@@ -12,29 +12,27 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppBarWidget(),
-              SizedBox(
-                height: 50,
-              ),
-              InfoBarWidget(),
-              SizedBox(
-                height: 50,
-              ),
-              GraphWidget(),
-            ],
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppBarWidget(),
+                SizedBox(
+                  height: 50,
+                ),
+                InfoBarWidget(),
+                SizedBox(
+                  height: 50,
+                ),
+                GraphWidget(),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

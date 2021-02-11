@@ -7,11 +7,10 @@ import 'ui/pages/splash_page.dart';
 void main() {
   runApp(MyApp());
 }
-
-class MyApp extends StatelessWidget {
+///My app
+class  MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
+  Widget build(BuildContext context) => MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (context) => DataProvider(),
@@ -22,5 +21,4 @@ class MyApp extends StatelessWidget {
         home: SplashPage(),
       ),
     );
-  }
 }

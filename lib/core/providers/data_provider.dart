@@ -29,14 +29,10 @@ class DataProvider extends ChangeNotifier {
   }
 
   ///Getter method for the symbol of the datamodel
-  String getDataModelSymbol() {
-    return dataModel.symbol;
-  }
+  String getDataModelSymbol() => dataModel.symbol;
 
   ///Getter method for the last close price of the stock
-  String getLastClosePrice() {
-    return dataModel.the1G.last.close.toString();
-  }
+  String getLastClosePrice() => dataModel.the1G.last.close.toString();
 
   ///Calculator for percentage rise/fall of stock depending on selection
   String getPercentage(int selection) {

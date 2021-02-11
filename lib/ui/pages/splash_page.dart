@@ -27,52 +27,50 @@ class _SplashPageState extends State<SplashPage>
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-          color: Color(0x7fffffff),
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-                color: Color(0x1e150c00),
-                offset: Offset(8, 24),
-                blurRadius: 48,
-                spreadRadius: 0),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/diamond.png'),
-                  fit: BoxFit.cover,
+  Widget build(BuildContext context) => Scaffold(
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            color: Color(0x7fffffff),
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                  color: Color(0x1e150c00),
+                  offset: Offset(8, 24),
+                  blurRadius: 48,
+                  spreadRadius: 0),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 250,
+                height: 250,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/diamond.png'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "FinFree",
-              style: TextStyle(
-                fontFamily: 'FedraSansStd',
-                color: Color(0xff150c00),
-                fontSize: 40,
-                fontWeight: FontWeight.w400,
-                fontStyle: FontStyle.normal,
-                letterSpacing: 0,
+              SizedBox(
+                height: 20,
               ),
-            ),
-          ],
+              Text(
+                'FinFree',
+                style: TextStyle(
+                  fontFamily: 'FedraSansStd',
+                  color: Color(0xff150c00),
+                  fontSize: 40,
+                  fontWeight: FontWeight.w400,
+                  fontStyle: FontStyle.normal,
+                  letterSpacing: 0,
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

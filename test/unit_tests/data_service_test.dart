@@ -26,7 +26,7 @@ void main() {
         'getData - Response data should contain status ',
         () async {
           when(_mockService.getData()).thenAnswer(
-            (_) async => Response(data: {"status": "200"}),
+            (_) async => Response(data: {'status': '200'}),
           );
           var app = _mockService;
           var response = await app.getData();

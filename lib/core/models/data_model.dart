@@ -39,31 +39,31 @@ class DataModel {
   ///From json method
   factory DataModel.fromJson(Map<String, dynamic> json) => DataModel(
         the1G: List<PriceEntry>.from(
-            json["1G"].map((x) => PriceEntry.fromJson(x))),
+            json['1G'].map((x) => PriceEntry.fromJson(x))),
         the1H: List<PriceEntry>.from(
-            json["1H"].map((x) => PriceEntry.fromJson(x))),
+            json['1H'].map((x) => PriceEntry.fromJson(x))),
         the1A: List<PriceEntry>.from(
-            json["1A"].map((x) => PriceEntry.fromJson(x))),
+            json['1A'].map((x) => PriceEntry.fromJson(x))),
         the3A: List<PriceEntry>.from(
-            json["3A"].map((x) => PriceEntry.fromJson(x))),
+            json['3A'].map((x) => PriceEntry.fromJson(x))),
         the1Y: List<PriceEntry>.from(
-            json["1Y"].map((x) => PriceEntry.fromJson(x))),
+            json['1Y'].map((x) => PriceEntry.fromJson(x))),
         the5Y: List<PriceEntry>.from(
-            json["5Y"].map((x) => PriceEntry.fromJson(x))),
-        code: json["Code"],
-        symbol: json["symbol"],
+            json['5Y'].map((x) => PriceEntry.fromJson(x))),
+        code: json['Code'],
+        symbol: json['symbol'],
       );
 
   ///To json method
   Map<String, dynamic> toJson() => {
-        "1G": List<dynamic>.from(the1G.map((x) => x.toJson())),
-        "1H": List<dynamic>.from(the1H.map((x) => x.toJson())),
-        "1A": List<dynamic>.from(the1A.map((x) => x.toJson())),
-        "3A": List<dynamic>.from(the3A.map((x) => x.toJson())),
-        "1Y": List<dynamic>.from(the1Y.map((x) => x.toJson())),
-        "5Y": List<dynamic>.from(the5Y.map((x) => x.toJson())),
-        "Code": code,
-        "symbol": symbol,
+        '1G': List<dynamic>.from(the1G.map((x) => x.toJson())),
+        '1H': List<dynamic>.from(the1H.map((x) => x.toJson())),
+        '1A': List<dynamic>.from(the1A.map((x) => x.toJson())),
+        '3A': List<dynamic>.from(the3A.map((x) => x.toJson())),
+        '1Y': List<dynamic>.from(the1Y.map((x) => x.toJson())),
+        '5Y': List<dynamic>.from(the5Y.map((x) => x.toJson())),
+        'Code': code,
+        'symbol': symbol,
       };
 }
 
@@ -99,21 +99,21 @@ class PriceEntry {
 
   ///From json method
   factory PriceEntry.fromJson(Map<String, dynamic> json) => PriceEntry(
-        day: json["d"] == null ? null : json["d"],
-        close: json["c"] == null ? null : json["c"].toDouble(),
-        open: json["o"] == null ? null : json["o"].toDouble(),
-        high: json["h"] == null ? null : json["h"].toDouble(),
-        low: json["l"] == null ? null : json["l"].toDouble(),
-        volume: json["v"] == null ? null : json["v"],
+        day: json['d'],
+        close: json['c'] == null ? null : json['c'].toDouble(),
+        open: json['o'] == null ? null : json['o'].toDouble(),
+        high: json['h'] == null ? null : json['h'].toDouble(),
+        low: json['l'] == null ? null : json['l'].toDouble(),
+        volume: json['v'],
       );
 
   ///To json method
   Map<String, dynamic> toJson() => {
-        "d": day == null ? null : day,
-        "c": close == null ? null : close,
-        "o": open == null ? null : open,
-        "h": high == null ? null : high,
-        "l": low == null ? null : low,
-        "v": volume == null ? null : volume,
+        'd': day,
+        'c': close,
+        'o': open,
+        'h': high,
+        'l': low,
+        'v': volume,
       };
 }

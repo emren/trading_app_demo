@@ -1,2 +1,25 @@
 
 include: package:effective_dart/analysis_options.yaml
+
+linter:
+  ##https://dart-lang.github.io/linter/lints/index.html
+  rules:
+    ##Effective Dart lints
+    use_setters_to_change_properties: false
+    prefer_expression_function_bodies: true
+    type_annotate_public_apis: false
+    ##Pedantic lints
+    recursive_getters: true
+    prefer_spread_collections: true
+    prefer_single_quotes: true
+    null_closures: true
+    prefer_conditional_assignment: true
+    prefer_contains: true
+    prefer_for_elements_to_map_fromIterable: true
+    prefer_if_null_operators: true
+    unawaited_futures: true
+    unnecessary_null_in_if_null_operators: true
+    use_function_type_syntax_for_parameters: true
+    ##Other lints
+    sort_pub_dependencies: true
+    unnecessary_final: true
