@@ -3,18 +3,13 @@ import 'dart:math';
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../models/data_model.dart';
 import '../services/data_service.dart';
+import 'base_provider.dart';
 
 ///Provider for data
-class DataProvider extends ChangeNotifier implements ReassembleHandler {
-  @override
-  void reassemble() {
-    print('hot_reload');
-  }
-
+class DataProvider extends BaseProvider {
   DataModel _dataModel;
 
   ///Getter for data model
